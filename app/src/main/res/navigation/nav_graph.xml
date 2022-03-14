@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/profileFragment2">
+
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mirkamol.pinterestclonemyproject.ui.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_datailFragment"
+            app:destination="@id/datailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment2"
+            app:destination="@id/searchFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_messageFragment"
+            app:destination="@id/messageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/datailFragment"
+        android:name="com.mirkamol.pinterestclonemyproject.ui.fragments.DatailFragment"
+        android:label="fragment_datail"
+        tools:layout="@layout/fragment_datail">
+        <action
+            android:id="@+id/action_datailFragment_self"
+            app:destination="@id/datailFragment" />
+        <action
+            android:id="@+id/action_datailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment2"
+        android:name="com.mirkamol.pinterestclonemyproject.ui.fragments.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment2_to_searchResultFragment"
+            app:destination="@id/searchResultFragment" />
+        <action
+            android:id="@+id/action_searchFragment2_to_imagePresenterFragment"
+            app:destination="@id/imagePresenterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.mirkamol.pinterestclonemyproject.ui.fragments.SearchResultFragment"
+        android:label="fragment_search_result"
+        tools:layout="@layout/fragment_search_result">
+        <action
+            android:id="@+id/action_searchResultFragment_to_searchFragment2"
+            app:destination="@id/searchFragment2" />
+        <action
+            android:id="@+id/action_searchResultFragment_to_datailFragment"
+            app:destination="@id/datailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.mirkamol.pinterestclonemyproject.ui.fragments.MessageFragment"
+        android:label="fragment_message"
+        tools:layout="@layout/fragment_message" />
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.mirkamol.pinterestclonemyproject.ui.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment2_to_datailFragment"
+            app:destination="@id/datailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imagePresenterFragment"
+        android:name="com.mirkamol.pinterestclonemyproject.ui.fragments.ImagePresenterFragment"
+        android:label="fragment_image_presenter"
+        tools:layout="@layout/fragment_image_presenter">
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_imagePresenterFragment_to_searchFragment2"
+            app:destination="@id/searchFragment2" />
+        <action
+            android:id="@+id/action_imagePresenterFragment_to_datailFragment"
+            app:destination="@id/datailFragment" />
+    </fragment>
+</navigation>
